@@ -1,2 +1,2 @@
-# idDMR-
+# idDMR
 idDMR - Identify Differentially Methylated Regions
