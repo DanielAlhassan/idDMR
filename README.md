@@ -1,2 +1,3 @@
-# idDMR
-idDMR - Identify Differentially Methylated Regions
+# idDMR Package :package:
+idDMR - Identify Differentially Methylated Regions 🧬
+
