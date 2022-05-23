@@ -1,4 +1,4 @@
-# idDMR Package  <img src="images/logo.png" align="right" width="20%" height="20%" />
+# idDMR Package  <img src="images/logo.jpg" align="right" width="20%" height="20%" />
 idDMR - Identify Differentially Methylated Regions 🧬
 
 ## Installation
