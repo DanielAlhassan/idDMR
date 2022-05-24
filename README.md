@@ -17,3 +17,5 @@ source("https://install-github.me//DanielAlhassan/idDMR")
 # install.packages("devtools")
 devtools::install_github("danielalhassan/idDMR") 
 ```
+
+## Overview
