@@ -42,7 +42,7 @@ As well as the core idDMR, installing this package also installs a selection of 
 ```r
 @Manual{,
   title = {idDMR: Identify Differentially Methylated Regions for Microarray Data},
-  author = {Daniel Ahmed Alhassan}, {Ebenezer Agbozo}
+  author = {Daniel Alhassan}, {Ebenezer Agbozo}
   year = {2022},
   note = {R package version 1.0.0},
   url = {https://github.com/DanielAlhassan/idDMR},
