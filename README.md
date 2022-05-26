@@ -1,5 +1,5 @@
-# idDMR Package  <img src="images/logo.jpg" align="right" width="20%" height="20%" />
-idDMR - Identify Differentially Methylated Regions 🧬
+# idDMR Package  <img src="images/logo1.jpg" align="right" width="20%" height="20%" />
+idDMR - Identify Differentially Methylated Regions for Microarray Data 🧬
 
 ## Installation
 
