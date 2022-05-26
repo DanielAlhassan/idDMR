@@ -2,7 +2,7 @@
 idDMR - Identify Differentially Methylated Regions for Microarray Data 🧬
 
 ## Installation
-
+----------------------------------------
 You can install the release version from CRAN
 
 ``` r
@@ -18,4 +18,12 @@ source("https://install-github.me//DanielAlhassan/idDMR")
 devtools::install_github("danielalhassan/idDMR") 
 ```
 
-## Overview
+## Documentation
+---------------------------------------
+
+
+## Acknowledgments
+---------------------------------------
+
+
+## Citation
