@@ -28,6 +28,14 @@ devtools::install_github("danielalhassan/idDMR")
 ```
 
 ## Usage
+To use the **idDMR** package, start by loading dependencies which will install (where necessary) and load all dependent packages:
+
+```r
+library(idDMR)
+
+load_dependencies()
+```
+
 
 
 ## Packages
@@ -37,16 +45,17 @@ As well as the core idDMR, installing this package also installs a selection of 
 ## Acknowledgments
 
 
-
+<!--
 ## Citation
 ```r
-@Manual{,
+@Package{,
   title = {idDMR: Identify Differentially Methylated Regions for Microarray Data},
   author = {Daniel Alhassan}, {Ebenezer Agbozo}
   year = {2022},
   note = {R package version 1.0.0},
   url = {https://github.com/DanielAlhassan/idDMR},
 }
+-->
 ```
 
 ## License
