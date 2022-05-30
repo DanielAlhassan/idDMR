@@ -1,0 +1,39 @@
+Type: Package
+Package: idDMR
+Title: Methylation Analysis Methods for Illumina Microarray Data
+Version: 0.5.0
+Authors@R: c(
+    person("Daniel", "Alhassan", , "daanmq@mst.edu", role = c("cre", "aut"),
+           comment = c(ORCID = "0000-0003-0944-5818")),
+    person("Gayla", "Olbricht", , "olbrichtg@mst.edu", role = "ths",
+           comment = c(ORCID = "0000-0002-1213-2241")),
+    person("Akim", "Adekpedjou", , "akima@mst.edu", role = "ths",
+           comment = c(ORCID = "0000-0001-9584-4297")),      
+    person("Ebenezer", "Agbozo", , "eagbozo@urfu.ru", role = "aut",
+           comment = c(ORCID = "0000-0002-2413-3815"))
+  )
+Maintainer: Daniel Alhassan <daanmq@mst.edu>
+Description: A system that uses a normalized kernel-weighted statistic for
+    detecting and identifing differentially methylated regions (DMRs) in
+    the human genome for Illumina's Infinium 450K and EPIC array.
+License: GPL (>= 3)
+URL: https://github.com/DanielAlhassan/idDMR
+Depends: 
+    R (>= 4.0.0)
+biocViews: biocViews: DifferentialMethylation, GeneExpression, Microarray, MethylationArray, Genetics, DifferentialExpression, GenomeAnnotation, DNAMethylation, OneChannel, TwoChannel, MultipleComparison, QualityControl, TimeCourse, Sequencing, WholeGenome, Epigenetics, Coverage, Preprocessing, DataImport   
+Imports: 
+     ExperimentHub, GenomeInfoDb, limma, edgeR, minfi, missMethyl, GenomicRanges, plyr, dplyr, magrittr, Gviz, IRanges, stats, utils, S4Vectors, methods, graphics, SummarizedExperiment
+Suggests: 
+    BiocGenerics,
+    BiocStyle,
+    DMRcatedata,
+    IlluminaHumanMethylation450kanno.ilmn12.hg19,
+    IlluminaHumanMethylationEPICanno.ilm10b4.hg19,
+    knitr,
+    RUnit,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr    
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0.9000
+Config/testthat/edition: 3
