@@ -55,8 +55,9 @@ As well as the core idDMR, installing this package also installs a selection of 
   note = {R package version 1.0.0},
   url = {https://github.com/DanielAlhassan/idDMR},
 }
--->
+
 ```
+-->
 
 ## License
 This package is free and open source software, licensed under GPL-3.
