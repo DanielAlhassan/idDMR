@@ -23,9 +23,6 @@ install.packages("idDMR", dependencies=TRUE)
 and the development version from GitHub
 -->
 ``` r
-source("https://github.com/DanielAlhassan/idDMR")
-# or
-# 
 install.packages("devtools")
 devtools::install_github("DanielAlhassan/idDMR") 
 ```
@@ -39,6 +36,19 @@ library(idDMR)
 load_dependencies()
 ```
 
+To run site-level test, use the function **cpgsite.annotate()**
+```r
+myannotation <- cpgsite.annotate(datatype = "array",new_mval,what = "M",arraytype = "450K",
+                                 analysis.type = "differential",design = design_mat,
+                                 coef = 2, fdr = 0.05)
+```
+
+To 
+```r
+aadmr = aaDMR(myannotation,h = 1000,  min.cpgs = 2)
+aadmr_df <- arrange(data.frame(extractRanges(aadmr, genome = "hg19")),seqnames)
+
+```
 
 
 ## Packages
@@ -46,7 +56,6 @@ As well as the core idDMR, installing this package also installs a selection of 
 
 
 ## Acknowledgments
-
 
 <!--
 ## Citation
