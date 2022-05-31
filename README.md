@@ -36,7 +36,7 @@ library(idDMR)
 load_dependencies()
 ```
 
-To run site-level test, use the function **cpgsite.annotate()**
+To run site-level test, use the function `cpgsite.annotate()`
 ```r
 myannotation <- cpgsite.annotate(datatype = "array",new_mval,what = "M",arraytype = "450K",
                                  analysis.type = "differential",design = design_mat,
@@ -49,11 +49,6 @@ aadmr = aaDMR(myannotation,h = 1000,  min.cpgs = 2)
 aadmr_df <- arrange(data.frame(extractRanges(aadmr, genome = "hg19")),seqnames)
 
 ```
-
-
-## Packages
-As well as the core idDMR, installing this package also installs a selection of other packages that you’re likely to use frequently. This includes packages for:
-
 
 ## Acknowledgments
 
