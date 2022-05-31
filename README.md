@@ -2,9 +2,8 @@
 idDMR - Identify Differentially Methylated Regions for Microarray Data 🧬
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/DanielAlhassan/idDMR/workflows/R-CMD-check/badge.svg)](https://github.com/DanielAlhassan/idDMR/actions)
-[![CRAN status](https://www.r-pkg.org/badges/version/idDMR)](https://CRAN.R-project.org/package=idDMR)
-[![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/idDMR)](https://cran.r-project.org/package=idDMR)
+[![R](https://github.com/DanielAlhassan/idDMR/actions/workflows/r.yml/badge.svg)](https://github.com/DanielAlhassan/idDMR/actions/workflows/r.yml)
+[![packageversion](https://img.shields.io/badge/Package%20version-0.5.0-orange.svg?style=flat-square)](commits/develop)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 <!-- badges: end -->
@@ -14,6 +13,7 @@ idDMR - Identify Differentially Methylated Regions for Microarray Data 🧬
 
 
 ## Installation
+<!--
 You can install the release version from CRAN
 
 ``` r
@@ -21,12 +21,13 @@ install.packages("idDMR", dependencies=TRUE)
 ```
 
 and the development version from GitHub
-
+-->
 ``` r
-source("https://install-github.me/DanielAlhassan/idDMR")
+source("https://github.com/DanielAlhassan/idDMR")
 # or
-# install.packages("devtools")
-devtools::install_github("danielalhassan/idDMR") 
+# 
+install.packages("devtools")
+devtools::install_github("DanielAlhassan/idDMR") 
 ```
 
 ## Usage
