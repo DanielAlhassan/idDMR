@@ -6,6 +6,8 @@ idDMR - Identify Differentially Methylated Regions for Microarray Data 🧬
 [![CRAN status](https://www.r-pkg.org/badges/version/idDMR)](https://CRAN.R-project.org/package=idDMR)
 [![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/idDMR)](https://cran.r-project.org/package=idDMR)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
+
 <!-- badges: end -->
 
 
