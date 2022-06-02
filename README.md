@@ -36,22 +36,24 @@ library(idDMR)
 load_dependencies()
 ```
 
-To run site-level test, use the function `cpgsite.annotate()`
+To run CpG site-level test (or determine differentially methylated loci), use the function `cpgsite.annotate()`
 ```r
-myannotation <- cpgsite.annotate(datatype = "array",new_mval,what = "M",arraytype = "450K",
+myannotation <- cpgsite.annotate(datatype = "array", mval, what = "M",arraytype = "450K",
                                  analysis.type = "differential",design = design_mat,
                                  coef = 2, fdr = 0.05)
 ```
 
-To 
+Next, use `aadmr()` function to identify differentially methylated regions. 
 ```r
-aadmr = aaDMR(myannotation,h = 1000,  min.cpgs = 2)
+aadmr = aaDMR(myannotation, h = 1000,  min.cpgs = 2)
+
+#extract the DMResults and output as a dataframe
 aadmr_df <- arrange(data.frame(extractRanges(aadmr, genome = "hg19")),seqnames)
 
 ```
 
 ## Acknowledgments
-
+We would like to immensely thank all authors and contributors to the DMRcate R/Biconductor package - their work served as a major foundation for this package we made.
 <!--
 ## Citation
 ```r
