@@ -83,6 +83,7 @@ When you use idDMR package, please cite the following:
     author = {Daniel Alhassan and Gayla Olbricht and Akim Adekpedjou and Ebenezer Agbozo},
     year = {2022},
     note = {R package version 0.5.0},
+    url = {https://github.com/DanielAlhassan/idDMR}
   }
 ```
 
