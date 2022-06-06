@@ -1,0 +1,28 @@
+citHeader("To cite idDMR in publications use:")
+
+citEntry(
+  entry    = "unpublished",
+  title    = "Differential Methylation Region Detection via an Array-adaptive Normalized Kernel-weighted Model",
+  author   = as.person("Daniel Alhassan"),
+  journal  = Unpublished Manuscript,
+  year     = 2022,
+  textVersion = paste(
+
+  )
+)
+
+
+citEntry(
+  entry    = "Manual",
+  title    = "idDMR: Methylation Analysis Methods for Illumina Microarray Data",
+  author   = as.person("Daniel Alhassan"), as.person("Gayla Olbricht"), as.person("Akim Adekpedjou"), as.person("Ebenezer Agbozo"),
+  year     = 2022,
+  note = {R package version 0.5.0},
+  url = {https://github.com/DanielAlhassan/idDMR},
+  textVersion = paste(
+
+  )
+)
+
+
+

@@ -6,28 +6,28 @@
 #' } where
 #' \eqn{ w_{j} = \dfrac{K\left( \frac{x_{j}-x_{i}}{h}\right)}{\sum_{\displaystyle\substack{j =1\\ j \neq i}}^{n}K\left( \frac{x_{j}-x_{i}}{h}\right)}}
 #'
-#' @usage aaDMR(object, h = 1000, pcutoff = "fdr", betacutoff = NULL, min.cpgs = 2)
+#' @usage aaDMR(object, g = 1000, pcutoff = "fdr", betacutoff = NULL, min.cpgs = 2)
 #'
 #' @param object A \link{CpGsiteAnnotated} object created from \link{cpgsite.annotate}.
-#' @param h An agglomerate parameter. Any sig. cpgs within \code{h} distance are collapsed to form a DMR.
+#' @param g An agglomerate parameter. Any sig. cpgs within \code{g} distance are collapsed to form a DMR.
 #' @param pcutoff A threshold to determine DMRs. Default is highly recommended.
 #' @param min.cpgs The minimum number of consecutive CpGs constituting a DMR.
 #'
 #' @export
 #'
-#' @details The value of h should be chosen with care. We recommend using a maximum value of 1000bp
-#' as the agglomerate parameter. If  `h` is too small DMRs might have refers CpGs and hence DMRs will
-#' span shorter gene loci. Also if `h` is too large, DMRs will span larger gene loci with a increased risk of Type I errors.
+#' @details The value of `g` should be chosen with care. We recommend using a maximum value of 1000bp
+#' as the agglomerate parameter. If  `g` is too small DMRs might have refers CpGs and hence DMRs will
+#' span shorter gene loci. Also if `g` is too large, DMRs will span larger gene loci with a increased risk of Type I errors.
 
 aaDMR <- function(object,
-                  h = 1000,
-                  # h
+                  g = 1000,
+                  # agglomerate parameter
                   pcutoff = "fdr",
                   betacutoff = NULL,
                   min.cpgs = 2) {
   ## Arguments
   stopifnot(is(object, "CpGsiteAnnotated"))
-  stopifnot(h >= 1)
+  stopifnot(g >= 1)
   stopifnot(pcutoff == "fdr" | (0 <= pcutoff & pcutoff <= 1))
 
 
@@ -48,13 +48,13 @@ aaDMR <- function(object,
 
 
   ## Kernel (chi-squared) test via 'ParallelFits'
-  lag <- h
+  lag <- g
   chr.unique <- unique(c(as.character(object$CHR)))
   fitted <-
     lapply(chr.unique,
            ParallelFits,
            object = object,
-           h = h)
+           g = g)
   object <- rbind.fill(fitted)
 
   ## FDR stuff
