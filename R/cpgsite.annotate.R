@@ -14,7 +14,7 @@
 #' @param design Study design matrix. Identical context to differential analysis pipeline in \code{limma}. Must have an intercept if contrasts=FALSE. Applies only when analysis.type %in% c("differential").
 #' @param fdr FDR cutoff (Benjamini and Hocheberg(1995)) for which CpG sites are individually declared significant. Used to index default thresholding in aaDMR(). \strong{Highly recommended as the primary thresholding parameter for calling DMRs}.
 #'
-#' @return A \code{\link{CpGsiteAnnotated}} class
+#' @return A [CpGsiteAnnotated-class] class
 #'
 #' @export
 #'

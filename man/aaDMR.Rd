@@ -4,12 +4,12 @@
 \alias{aaDMR}
 \title{DMR detection}
 \usage{
-aaDMR(object, h = 1000, pcutoff = "fdr", betacutoff = NULL, min.cpgs = 2)
+aaDMR(object, g = 1000, pcutoff = "fdr", betacutoff = NULL, min.cpgs = 2)
 }
 \arguments{
-\item{object}{A \link{CpGsiteAnnotated} object created from \link{cpgsite.annotate}.}
+\item{object}{A \linkS4class{CpGsiteAnnotated} object created from \link{cpgsite.annotate}.}
 
-\item{h}{An agglomerate parameter. Any sig. cpgs within \code{h} distance are collapsed to form a DMR.}
+\item{g}{An agglomerate parameter. Any sig. cpgs within \code{g} distance are collapsed to form a DMR.}
 
 \item{pcutoff}{A threshold to determine DMRs. Default is highly recommended.}
 
@@ -24,7 +24,7 @@ The main function of this package. Computes a normalized kernel-weight statistic
 \eqn{ w_{j} = \dfrac{K\left( \frac{x_{j}-x_{i}}{h}\right)}{\sum_{\displaystyle\substack{j =1\\ j \neq i}}^{n}K\left( \frac{x_{j}-x_{i}}{h}\right)}}
 }
 \details{
-The value of h should be chosen with care. We recommend using a maximum value of 1000bp
-as the agglomerate parameter. If  \code{h} is too small DMRs might have refers CpGs and hence DMRs will
-span shorter gene loci. Also if \code{h} is too large, DMRs will span larger gene loci with a increased risk of Type I errors.
+The value of \code{g} should be chosen with care. We recommend using a maximum value of 1000bp
+as the agglomerate parameter. If  \code{g} is too small DMRs might have refers CpGs and hence DMRs will
+span shorter gene loci. Also if \code{g} is too large, DMRs will span larger gene loci with a increased risk of Type I errors.
 }

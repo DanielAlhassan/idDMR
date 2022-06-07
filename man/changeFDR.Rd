@@ -7,7 +7,7 @@
 changeFDR(annot, FDR)
 }
 \arguments{
-\item{annot}{A \link{CpGsiteAnnotated} object created from \link{cpgsite.annotate}.}
+\item{annot}{A \linkS4class{CpGsiteAnnotated} object created from \link{cpgsite.annotate}.}
 
 \item{FDR}{The desired individual CpG FDR, which will index the rate at which DMRs are called.}
 }
@@ -18,5 +18,5 @@ A re-indexed \linkS4class{CpGsiteAnnotated} object.
 Takes a \linkS4class{CpGsiteAnnotated} object and a specified \verb{0 < FDR< 1}, and re-indexes the object in order to call DMRs at the specified rate.
 }
 \details{
-The number of CpG sites called as significant by this function will set the post-smoothing threshold for DMR constituents in \code{\link{aaDMR}}
+The number of CpG sites called as significant by this function will set the post-smoothing threshold for DMR constituents in \link{aaDMR}
 }

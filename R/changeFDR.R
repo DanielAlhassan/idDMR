@@ -4,11 +4,11 @@
 #'
 #' @usage changeFDR(annot, FDR)
 #'
-#' @param annot A [CpGsiteAnnotated] object created from [cpgsite.annotate].
+#' @param annot A [CpGsiteAnnotated-class] object created from [cpgsite.annotate].
 #' @param FDR The desired individual CpG FDR, which will index the rate at which DMRs are called.
 #' @export
 #'
-#' @details The number of CpG sites called as significant by this function will set the post-smoothing threshold for DMR constituents in \code{\link{aaDMR}}
+#' @details The number of CpG sites called as significant by this function will set the post-smoothing threshold for DMR constituents in [aaDMR]
 #' @return A re-indexed [CpGsiteAnnotated-class] object.
 
 

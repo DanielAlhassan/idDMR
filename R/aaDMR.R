@@ -8,7 +8,7 @@
 #'
 #' @usage aaDMR(object, g = 1000, pcutoff = "fdr", betacutoff = NULL, min.cpgs = 2)
 #'
-#' @param object A \link{CpGsiteAnnotated} object created from \link{cpgsite.annotate}.
+#' @param object A [CpGsiteAnnotated-class] object created from [cpgsite.annotate].
 #' @param g An agglomerate parameter. Any sig. cpgs within \code{g} distance are collapsed to form a DMR.
 #' @param pcutoff A threshold to determine DMRs. Default is highly recommended.
 #' @param min.cpgs The minimum number of consecutive CpGs constituting a DMR.

@@ -28,7 +28,7 @@ only "array" works.}
 \item{fdr}{FDR cutoff (Benjamini and Hocheberg(1995)) for which CpG sites are individually declared significant. Used to index default thresholding in aaDMR(). \strong{Highly recommended as the primary thresholding parameter for calling DMRs}.}
 }
 \value{
-A \code{\link{CpGsiteAnnotated}} class
+A \linkS4class{CpGsiteAnnotated} class
 }
 \description{
 Annotate Illumina CpGs with their chromosome position and test statistic based on \code{limma}.
