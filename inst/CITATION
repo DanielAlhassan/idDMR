@@ -3,11 +3,10 @@ citHeader("To cite idDMR in publications use:")
 citEntry(
   entry    = "unpublished",
   title    = "Differential Methylation Region Detection via an Array-adaptive Normalized Kernel-weighted Model",
-  author   = as.person("Daniel Alhassan"),
-  journal  = Unpublished Manuscript,
+  author   = as.person("Daniel Alhassan", "Gayla Olbricht","Akim Adekpedjou"),
+  journal  = "Unpublished Manuscript",
   year     = 2022,
-  textVersion = paste(
-
+  textVersion = paste("Alhassan et al (2022). Differential Methylation Region Detection via an Array-adaptive Normalized Kernel-weighted Model, Unpublished Manuscript")
   )
 )
 
