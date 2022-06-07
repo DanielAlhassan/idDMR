@@ -6,7 +6,7 @@ citEntry(
   author   = as.person("Daniel Alhassan", "Gayla Olbricht","Akim Adekpedjou"),
   journal  = "Unpublished Manuscript",
   year     = 2022,
-  textVersion = paste("Alhassan et al (2022). Differential Methylation Region Detection via an Array-adaptive Normalized Kernel-weighted Model, Unpublished Manuscript")
+  textVersion = paste("Daniel Alhassan, Gayla Olbricht, Akim Adekpedjou (2022). Differential Methylation Region Detection via an Array-adaptive Normalized Kernel-weighted Model, Unpublished Manuscript")
   )
 )
 
@@ -14,14 +14,14 @@ citEntry(
 citEntry(
   entry    = "Manual",
   title    = "idDMR: Methylation Analysis Methods for Illumina Microarray Data",
-  author   = as.person("Daniel Alhassan"), as.person("Gayla Olbricht"), as.person("Akim Adekpedjou"), as.person("Ebenezer Agbozo"),
-  year     = 2022,
+  author   = personList(as.person("Daniel Alhassan"), as.person("Gayla Olbricht"), as.person("Akim Adekpedjou"), as.person("Ebenezer Agbozo")),
+  year     = year,
   note = {R package version 0.5.0},
   url = {https://github.com/DanielAlhassan/idDMR},
-  textVersion = paste(
-
-  )
+  textVersion = paste("Daniel Alhassan, Gayla Olbricht, Akim Adekpedjou, Ebenezer Agbozo", sprintf("(%s).", year),
+               "idDMR: Methylation Analysis Methods for Illumina Microarray Data.",
+	       paste(note, ".", sep = ""),
+               "URL https://github.com/DanielAlhassan/idDMR")
 )
-
 
 

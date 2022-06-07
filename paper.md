@@ -39,55 +39,29 @@ aas-journal: Astrophysical Journal <- The name of the AAS journal.
 ---
 
 # Summary
+`idDMR` is an R package currently hosted in GitHub repository for identifying or detecting differentially methylated region in the Human genome for data  [idDMR](https://github.com/DanielAlhassan/idDMR). 
 
-The forces on stars, galaxies, and dark matter under external gravitational
-fields lead to the dynamical evolution of structures in the universe. The orbits
-of these bodies are therefore key to understanding the formation, history, and
-future state of galaxies. The field of "galactic dynamics," which aims to model
-the gravitating components of galaxies to study their structure and evolution,
-is now well-established, commonly taught, and frequently used in astronomy.
-Aside from toy problems and demonstrations, the majority of problems require
-efficient numerical tools, many of which require the same base code (e.g., for
-performing numerical orbit integration).
 
 # Statement of need
+ Identifying differentially methylated regions is a common but challenging task the researcher faces owing to the complex nature and degree of co-methylation between neighboring CpG sites on a chromosome. Several efforts have been made, methods have been proposed and software packages written for these methods to make the users task easier. As our knowledge on the degree of co-methylation increases, better methods that utilize the new findings are proposed and hence software need to be created to make them available to the user to implement. 
 
-`Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
-enables wrapping low-level languages (e.g., C) for speed without losing
-flexibility or ease-of-use in the user-interface. The API for `Gala` was
-designed to provide a class-based and user-friendly interface to fast (C or
-Cython-optimized) implementations of common operations such as gravitational
-potential and force evaluation, orbit integration, dynamical transformations,
-and chaos indicators for nonlinear dynamics. `Gala` also relies heavily on and
-interfaces well with the implementations of physical units and astronomical
-coordinate systems in the `Astropy` package [@astropy] (`astropy.units` and
-`astropy.coordinates`).
-
-`Gala` was designed to be used by both astronomical researchers and by
-students in courses on gravitational dynamics or astronomy. It has already been
-used in a number of scientific publications [@Pearson:2017] and has also been
-used in graduate courses on Galactic dynamics to, e.g., provide interactive
-visualizations of textbook material [@Binney:2008]. The combination of speed,
-design, and support for Astropy functionality in `Gala` will enable exciting
-scientific explorations of forthcoming data releases from the *Gaia* mission
-[@gaia] by students and experts alike.
+Some existing R packages in this area of research are the  `bumphunter` pacakge [@bumphunter;@minfi], the `ChAMP` package with implements the `Probe Lasso` method to DMR identification
+ 
+ As with the above R/Biconductor packages,  `idDMR` package was designed to allow the user to implement the methods discussed in [Alhassan et 2021]. At the heart of the detection procedure is the use of the normalized kernel-weighted statistic to incorporate co-methylation information at the CpG site-level. Our modeling framework borrows it's foundation work from DMRcate [@DMRcate2015]. 
+ 
 
 # Mathematics
+The estimator at the heart of our DMR detection procedure is the array-adaptive normalized kernel-weighted statistic $S(x_{i})$ below:
 
-Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
+$$\begin{align}
+S(x_{i})   & = Y_{i} + \sum_{\substack{j = 1\\j \neq i}}^{n}w_{j}(x_{i})Y_{j} 
+\end{align}$$
 
-Double dollars make self-standing equations:
+where $Y_{i}$ is the square of `limma`'s t-statistic [@limma] and $w_{j} = \dfrac{K\left( \dfrac{x_{j}-x_{i}}{h}\right)}{\displaystyle\sum_{\substack{j =1\\j \neq i}}^{n}K\left( \dfrac{x_{j}-x_{i}}{h}\right)}$. 
+See [Alhassan] for a more in dept discussion of the methods.
 
-$$\Theta(x) = \left\{\begin{array}{l}
-0\textrm{ if } x < 0\cr
-1\textrm{ else}
-\end{array}\right.$$
 
-You can also use plain \LaTeX for equations
-\begin{equation}\label{eq:fourier}
-\hat f(\omega) = \int_{-\infty}^{\infty} f(x) e^{i\omega x} dx
-\end{equation}
-and refer to \autoref{eq:fourier} from text.
+
 
 # Citations
 
@@ -96,21 +70,14 @@ Citations to entries in paper.bib should be in
 format.
 
 If you want to cite a software repository URL (e.g. something on GitHub without a preferred
-citation) then you can do it with the example BibTeX entry below for @fidgit.
+citation) then you can do it with the example BibTeX entry below for .
 
 For a quick reference, the following citation commands can be used:
 - `@author:2001`  ->  "Author et al. (2001)"
 - `[@author:2001]` -> "(Author et al., 2001)"
 - `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)"
 
-# Figures
 
-Figures can be included like this:
-![Caption for example figure.\label{fig:example}](figure.png)
-and referenced from text using \autoref{fig:example}.
-
-Figure sizes can be customized by adding an optional second parameter:
-![Caption for example figure.](figure.png){ width=20% }
 
 # Acknowledgements
 
