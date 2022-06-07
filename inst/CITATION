@@ -7,7 +7,6 @@ citEntry(
   journal  = "Unpublished Manuscript",
   year     = 2022,
   textVersion = paste("Daniel Alhassan, Gayla Olbricht, Akim Adekpedjou (2022). Differential Methylation Region Detection via an Array-adaptive Normalized Kernel-weighted Model, Unpublished Manuscript")
-  )
 )
 
 
