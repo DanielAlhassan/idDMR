@@ -42,30 +42,20 @@ affiliations:
 ---
 
 # Summary
-Identifying and detecting differentially methylated regions(DMRs) in  the human genome has been an area of keen research interest for years now. Many methods and their associated `R` packages have been proposed to solve problems related to DNA methylation data. However, our knowledge on the co-methylation structure between nearby cytosine followed by guanine (CpG) sites has increased. [@Sun2019] recently revealed that co-methylation patterns within normal tissues  were as short as a few hundred base pairs (bp) of each other. [@Sun2019b] in another article on analysis of methylation patterns between CpG sites in a breast cancer study revealed that co-methylation region lengths differed significantly for unmethylated and methylated states. Another finding worthy on note is that by [@sun2022]. They  that the co-methylation patterns on chromosome X were different from the other chromosomes suggesting that the degree of co-methylation may differ on different chromosomes. Owing to these recent findings, we developed the `idDMR`  R package to help the scientists in the field to implement the DMR detection method that uses an array-adaptive normalized kernel-weighted statistic developed by [Alhassan et al 2022].
-`idDMR`[idDMR](https://github.com/DanielAlhassan/idDMR) is currently hosted in GitHub repository. Currently this package enhouses one DMR detection method in the function `aaDMR()`. This function uses the array-adaptive normalized kernel statistic in (\ref{A}). Some of its arguments, it accepts a `CpGsiteAnnotated` object, an adapted object in the `idDMR` package, from the originally created `cpgannotated` object by [@DMRcate2015]; an agglomerate parameter, g, set by the user that is used as the maximum bp distance in collapsing contiguous sites into regions. We describe the key functions in the package and how to use it in the Usage section below.
+Identifying and detecting differentially methylated regions(DMRs) in  the human genome has been an area of keen research interest for years now. Many methods and their associated `R` packages have been proposed to solve problems related to DNA methylation data.  A few common existing R packages in this area of research are the  `bumphunter` package [@bumphunter;@minfi], the `ChAMP` package with implements the `Probe Lasso` method to DMR identification and the `DMRcate` package [@DMRcate2015]. \par
+Our knowledge on the co-methylation structure between nearby cytosine followed by guanine (CpG) sites has increased. [@Sun2019] recently revealed that co-methylation patterns within normal tissues  were as short as a few hundred base pairs (bp) of each other. [@Sun2019b] in another article on analysis of methylation patterns between CpG sites in a breast cancer study revealed that co-methylation region lengths differed significantly for unmethylated and methylated states. Another finding worthy on note is that by [@sun2022].
+They concluded that the co-methylation patterns on chromosome X were different from the other chromosomes suggesting that the degree of co-methylation may differ on different chromosomes. Owing to these recent findings, we developed the `idDMR`  R package to help the scientist implement the DMR detection method that uses an array-adaptive normalized kernel-weighted statistic developed by [Alhassan et al 2022]. \par
 
-
-
-# Statement of need
-Identifying differentially methylated regions is a common but challenging task the researcher faces owing to the complex nature and degree of co-methylation between neighboring CpG sites on a chromosome. Several efforts have been made, methods have been proposed and software packages written for these methods to make the users task easier. As our knowledge on the degree of co-methylation increases, better methods that utilize the new findings are proposed and hence software need to be created to make them available to the user to implement.
-
-Some existing R packages in this area of research are the  `bumphunter` package [@bumphunter;@minfi], the `ChAMP` package with implements the `Probe Lasso` method to DMR identification
+[idDMR](https://github.com/DanielAlhassan/idDMR) is currently hosted on GitHub. Currently this package contains one DMR detection method in the function `aaDMR()`. This function uses the array-adaptive normalized kernel statistic in (\ref{A}). The primary arguments it accepts include a `CpGsiteAnnotated` object, an adapted object , from the originally created `cpgannotated` object by [@DMRcate2015]; an agglomerate parameter, g, set by the user that is used as the maximum bp distance in collapsing contiguous sites into regions. We describe the key functions in the package and how to use them in the Usage section below.
  
- As with the above R/Biconductor packages,  `idDMR` package was designed to allow the user to implement the methods discussed in [Alhassan et 2021]. At the heart of the detection procedure is the use of the normalized kernel-weighted statistic to incorporate co-methylation information at the CpG site-level. Our modeling framework borrows it's foundation work from DMRcate [@DMRcate2015].
- 
-
-### Mathematics
-The estimator at the heart of our DMR detection procedure is the array-adaptive normalized kernel-weighted statistic $S(x_{i})$ below:
+### 
+The estimator at the heart of our DMR detection procedure is the array-adaptive normalized kernel-weighted statistic $S(x_{i})$ below due to [Alhassan 2022]:
 
 \begin{align}
 S(x_{i}) = Y_{i} + \sum_{j \neq i}^{n}w_{j}(x_{i})Y_{j}
 \label{A}
 \end{align}
-
-
-where $Y_{i}$ is the square of `limma`'s t-statistic [@limma] and $w_{j} = \dfrac{K\left( \dfrac{x_{j}-x_{i}}{h}\right)}{\displaystyle\sum_{j \neq i}^{n}K\left( \dfrac{x_{j}-x_{i}}{h}\right)}$.
-See [Alhassan] for a more in dept discussion of the methods.
+where $Y_{i}$ is the square of `limma`'s t-statistic [@limma] and $w_{j}$ is a weight measure defined in [Alhassan 2022].
 
 # Key Functions
 The two core functions of the `idDMR` package are:
