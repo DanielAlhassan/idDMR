@@ -42,8 +42,8 @@ affiliations:
 ---
 
 # Summary
-Identifying and detecting differentially methylated regions(DMRs) in  the human genome has been an area of keen research for years now. Many methods and their associated `R` packages to solve problems related to methylated data. However, our knowledge on the methylation data particularly, the co-methylation structure between nearby CpG sites has increased. [@Sun2019b; @Sun2019] recently revealed that methylation patterns between neighboring sites is high for sites within a few hundred base pairs (bp) of each other. Even more recently in [@sun2022], it was revealed in a breast cancer study that the degree of co-methylation is different on different chromosomes. Owing to these recent findings, we developed the `idDMR`  R package to help the scientists in the field to implement the DMR detection method that uses an array-adaptive normalized kernel-weighted statistic developed by [Alhassan et al 2022].
-`idDMR`[idDMR](https://github.com/DanielAlhassan/idDMR) is currently hosted in GitHub repository. Currently this package enhouses one DMR detection method in the function `aaDMR()`. This function uses the array-adaptive normalized kernel statistic in (\ref{A}). Some of its arguments, it accepts a `CpGsiteannotated` object, an adapted object in the `idDMR` package, from the originally created `cpgannotated` object by [@DMRcate2015]; an agglomerate parameter, g, set by the user that is used as the maximum bp distance in collapsing contiguous sites into regions. We describe the key functions in the package and how to use it in the Usage section below.
+Identifying and detecting differentially methylated regions(DMRs) in  the human genome has been an area of keen research interest for years now. Many methods and their associated `R` packages have been proposed to solve problems related to DNA methylation data. However, our knowledge on the co-methylation structure between nearby cytosine followed by guanine (CpG) sites has increased. [@Sun2019] recently revealed that co-methylation patterns within normal tissues  were as short as a few hundred base pairs (bp) of each other. [@Sun2019b] in another article on analysis of methylation patterns between CpG sites in a breast cancer study revealed that co-methylation region lengths differed significantly for unmethylated and methylated states. Another finding worthy on note is that by [@sun2022]. They  that the co-methylation patterns on chromosome X were different from the other chromosomes suggesting that the degree of co-methylation may differ on different chromosomes. Owing to these recent findings, we developed the `idDMR`  R package to help the scientists in the field to implement the DMR detection method that uses an array-adaptive normalized kernel-weighted statistic developed by [Alhassan et al 2022].
+`idDMR`[idDMR](https://github.com/DanielAlhassan/idDMR) is currently hosted in GitHub repository. Currently this package enhouses one DMR detection method in the function `aaDMR()`. This function uses the array-adaptive normalized kernel statistic in (\ref{A}). Some of its arguments, it accepts a `CpGsiteAnnotated` object, an adapted object in the `idDMR` package, from the originally created `cpgannotated` object by [@DMRcate2015]; an agglomerate parameter, g, set by the user that is used as the maximum bp distance in collapsing contiguous sites into regions. We describe the key functions in the package and how to use it in the Usage section below.
 
 
 
@@ -98,11 +98,6 @@ aadmr = aaDMR(myannotation, g = 1000,  min.cpgs = 2)
 aadmr_df <- arrange(data.frame(extractRanges(aadmr, genome = "hg19")), seqnames)
 
 ```
-
-# Citations
-
-
-
 
 # References
 
