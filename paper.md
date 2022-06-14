@@ -54,34 +54,55 @@ Some existing R packages in this area of research are the  `bumphunter` pacakge 
 The estimator at the heart of our DMR detection procedure is the array-adaptive normalized kernel-weighted statistic $S(x_{i})$ below:
 
 $$\begin{align}
-S(x_{i})   & = Y_{i} + \sum_{\substack{j = 1\\j \neq i}}^{n}w_{j}(x_{i})Y_{j} 
+S(x_{i}) = Y_{i} + \sum_{j \neq i}^{n}w_{j}(x_{i})Y_{j} 
+\end{align}$$
+
+$$\begin{align}
+S(x_{i}) = Y_{i} + \sum_{j \neq i}^{n}w_{j}(x_{i})Y_{j} 
+\end{align}$$
+
+$$\begin{align}
+S(x_{i}) = Y_{i} + \sum_{j \neq i}^{n}w_{j}(x_{i})Y_{j} 
 \end{align}$$
 
 where $Y_{i}$ is the square of `limma`'s t-statistic [@limma] and $w_{j} = \dfrac{K\left( \dfrac{x_{j}-x_{i}}{h}\right)}{\displaystyle\sum_{\substack{j =1\\j \neq i}}^{n}K\left( \dfrac{x_{j}-x_{i}}{h}\right)}$. 
 See [Alhassan] for a more in dept discussion of the methods.
 
 
+# Key Functions
+The two core functions of the `idDMR` package are:
+- `cpgsite.annotate` which runs CpG site-level test i.e. determine differentially methylated loci.
 
-
-# Citations
-
-Citations to entries in paper.bib should be in
-[rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
-format.
-
-If you want to cite a software repository URL (e.g. something on GitHub without a preferred
-citation) then you can do it with the example BibTeX entry below for .
-
-For a quick reference, the following citation commands can be used:
-- `@author:2001`  ->  "Author et al. (2001)"
-- `[@author:2001]` -> "(Author et al., 2001)"
-- `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)"
+- `aadmr` which is responsible for identifying differentially methylated regions.
 
 
 
-# Acknowledgements
+# Usage
+To use the **idDMR** package, start by loading dependencies which will install (where necessary) and load all dependent packages:
 
-We acknowledge contributions from Brigitta Sipocz, Syrtis Major, and Semyeong
-Oh, and support from Kathryn Johnston during the genesis of this project.
+```r
+library(idDMR)
+
+load_dependencies()
+```
+
+To run CpG site-level test (or determine differentially methylated loci), use the function `cpgsite.annotate()`
+```r
+myannotation <- cpgsite.annotate(datatype = "array", mval, what = "M", arraytype = "450K",
+                                 analysis.type = "differential", design = design_mat,
+                                 coef = 2, fdr = 0.05)
+```
+
+Next, use `aadmr()` function to identify differentially methylated regions. 
+```r
+aadmr = aaDMR(myannotation, g = 1000,  min.cpgs = 2)
+
+#extract the DMResults and output as a dataframe
+aadmr_df <- arrange(data.frame(extractRanges(aadmr, genome = "hg19")), seqnames)
+
+```
+
+
+
 
 # References
