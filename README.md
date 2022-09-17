@@ -59,7 +59,7 @@ We would like to immensely thank all authors and contributors to the DMRcate R/B
 When you use idDMR package, please cite the following:
 ```r
 @Manual{,
-    title = {idDMR: Methylation Analysis Methods for Illumina Microarray Data},
+    title = {idDMR: Identifying Differentially Methylated Regions for Illumina Microarray Data},
     author = {Daniel Alhassan and Gayla Olbricht and Akim Adekpedjou and Ebenezer Agbozo},
     year = {2022},
     note = {R package version 0.5.0},
