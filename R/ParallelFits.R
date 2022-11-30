@@ -1,11 +1,11 @@
 #' Adapts DMRcate's fitParallel() function
 #' Uses the array-adaptive normalized kernel-weight proposed by Alhassan et al (2022)
 #' @param chr refers to the chromosome-type eg. chr1, chr2 etc.
-#' @param h refers to agglomerate parameter. Any sig. cpgs with 'h' distance are collapsed to form a DMR
+#' @param g refers to agglomerate parameter. Any sig. cpgs with 'g' distance are collapsed to form a DMR
 #' @noRd
 
 
-ParallelFits <- function(chr, object, h) {
+ParallelFits <- function(chr, object, g) {
   message(paste("Array-adaptive Fitting for ", chr, "...", sep = ""))
   chrIndex <- object$CHR %in% chr
   chromosome <- object[chrIndex,]
@@ -13,7 +13,7 @@ ParallelFits <- function(chr, object, h) {
   pos <- chromosome$pos
 
 
-  lag <- h
+  lag <- g
   beta <- chromosome$weights
   df <- 1
   X2 <- beta^2
